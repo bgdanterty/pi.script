@@ -1,6 +1,5 @@
 #!/bin/bash
 
-#LOGS
     echo -e '\nCHEKING LOGS\n';
 if
     cat /var/log/syslog | grep 'Under-voltage detected'; 
@@ -13,7 +12,6 @@ else
 	echo -e '\nUnder-voltage detected — не хватает питания, нужно менять БП \nEXT4-fs error — ошибка файловой системы, перезапись на НОВУЮ карту памяти \nJBD2: Spotted dirty metadata buffer — ошибка файловой системы, перезапись на НОВУЮ карту памяти \nusbfs: interface 1 claimed by usbfs while 'python' sets config #1 — если есть жалобы на отпадание ФР, то замена USB кабеля или работа напрямую';
 fi
 
-#STATUS
     echo -e '\nCHEKING STATUS\n';
     sudo supervisorctl status;
 if
